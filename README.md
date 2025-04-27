@@ -18,7 +18,7 @@ Based on my experience, here’s what I usually recommend:
 - Functions should use verbs and clearly describe the action they perform.
 - Naming classes: keep it simple and descriptive.
 - Avoid repetition in hierarchies and namespaces.
-- Keep one tense. Do not mix tenses for functions serving the same purpose (e.g., accountClicked, userClick).
+- Keep one tense. Do not mix tenses for functions serving the same purpose (e.g., `renameAccountClicked`, `updateAccountClick`).
 - If possible, match the names with the business requirements.
 
 some examples:
@@ -36,7 +36,7 @@ sealed class AuthorizedLogin {
     ✅ data object InProgress
 }
 // so later in the code you get this:
-return AuthorizedLogin.Succeded
+return AuthorizedLogin.Succeded 
 // instead of this:
 return AuthorizedLogin.AuthorizedLoginSucceded
 
@@ -111,7 +111,32 @@ One of the most important conventions. Unless it is absolutely clear from contex
 - https://kotlinlang.org/docs/coding-conventions.html
 - https://developer.android.com/kotlin/style-guide
 
-### 7. Last but not least. You do not have to blindly follow these conventions. But as long as you have defined a set of rules/conventions, you should follow them without many deviations.
+### 7. Define rules for naming composables
+I usually use the suffix `Screen` for each new screen, `Content` for the main content of the screen, and `View` for smaller inner composables.
+
+```
+@Composable
+fun AccountScreen() {
+    val state by viewModel.state
+
+    AccountContent() { ... }
+}
+
+@Composable
+private fun AccountContent() {
+    Column {
+	Text(text = "AccountName")
+        Image(src = "AccountPhoto")
+        AccountDetailsView()
+    }
+     
+}
+
+@Composable
+private fun AccountDetailsView() { ... }
+```
+
+### 8. Last but not least. You do not have to blindly follow these conventions. But as long as you have defined a set of rules/conventions, you should follow them without many deviations.
 
 
 
