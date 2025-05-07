@@ -52,7 +52,7 @@ return AuthorizedLogin.AuthorizedLoginSucceded
 ```
 
 ### 2. Order of public and private functions in Classes:
-1. First, implement interfaces and abstract classes (if any).
+1. First, implement interfaces and abstract classes (if any). If thse functions are empty/not used place them at the bottom of the class.
 2. Second, place public functions at the top of the class.
 3. Finally, place private functions at the bottom of the class, following the same order in which they are used by the public functions.
 Example:
