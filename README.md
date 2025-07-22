@@ -109,6 +109,7 @@ One of the most important conventions. Unless it is absolutely clear from contex
 
 ### 6. Read Kotlin and Android conventions
 - https://kotlinlang.org/docs/coding-conventions.html
+- https://developer.android.com/topic/architecture/recommendations#naming-conventions
 - https://developer.android.com/kotlin/style-guide
 
 ### 7. Define rules for naming composables
